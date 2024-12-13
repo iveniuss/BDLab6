@@ -34,18 +34,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(22, 19);
+            label1.Margin = new Padding(6, 0, 6, 0);
+            label1.MaximumSize = new Size(400, 0);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(78, 32);
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
             // Error
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(257, 100);
+            ClientSize = new Size(477, 213);
             Controls.Add(label1);
+            Margin = new Padding(6);
             Name = "Error";
             Text = "Ошибка";
             ResumeLayout(false);

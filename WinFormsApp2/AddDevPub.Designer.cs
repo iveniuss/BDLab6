@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp2
 {
-    partial class DeleteLogin
+    partial class AddDevPub
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            label2 = new Label();
             textBox1 = new TextBox();
+            textBox2 = new TextBox();
             button1 = new Button();
             button2 = new Button();
             SuspendLayout();
@@ -37,55 +39,68 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 19);
-            label1.Margin = new Padding(6, 0, 6, 0);
+            label1.Location = new Point(120, 19);
             label1.Name = "label1";
-            label1.Size = new Size(81, 32);
+            label1.Size = new Size(61, 32);
             label1.TabIndex = 0;
-            label1.Text = "Логин";
+            label1.Text = "Имя";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(22, 81);
+            label2.Name = "label2";
+            label2.Size = new Size(159, 32);
+            label2.TabIndex = 1;
+            label2.Text = "Информация";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(110, 13);
-            textBox1.Margin = new Padding(6, 6, 6, 6);
+            textBox1.Location = new Point(187, 12);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(411, 39);
-            textBox1.TabIndex = 1;
+            textBox1.Size = new Size(393, 39);
+            textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(187, 74);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(393, 39);
+            textBox2.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(22, 132);
-            button1.Margin = new Padding(6, 6, 6, 6);
+            button1.Location = new Point(12, 199);
             button1.Name = "button1";
-            button1.Size = new Size(167, 64);
-            button1.TabIndex = 2;
-            button1.Text = "Отмена";
+            button1.Size = new Size(150, 46);
+            button1.TabIndex = 4;
+            button1.Text = " Отмена";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(357, 132);
-            button2.Margin = new Padding(6, 6, 6, 6);
+            button2.Location = new Point(448, 199);
             button2.Name = "button2";
-            button2.Size = new Size(167, 64);
-            button2.TabIndex = 3;
-            button2.Text = "Удалить";
+            button2.Size = new Size(150, 46);
+            button2.TabIndex = 5;
+            button2.Text = "Добавить";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // DeleteLogin
+            // AddDevPub
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(546, 222);
+            ClientSize = new Size(610, 257);
             Controls.Add(button2);
             Controls.Add(button1);
+            Controls.Add(textBox2);
             Controls.Add(textBox1);
+            Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(6, 6, 6, 6);
-            Name = "DeleteLogin";
-            Text = "Удаление";
+            Name = "AddDevPub";
+            Text = "AddDevPub";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -93,7 +108,9 @@
         #endregion
 
         private Label label1;
+        private Label label2;
         private TextBox textBox1;
+        private TextBox textBox2;
         private Button button1;
         private Button button2;
     }

@@ -54,14 +54,14 @@ namespace WinFormsApp2
             if (comboBox2.SelectedItem is ComboBoxItem cbi2)
                 pub = cbi2.Id;
             string link = textBox4.Text;
-            //try
-            //{
-            new Success(connect.Command($"insert into games (name, description, release_date, dev_id, pub_id, link) values (\'{name}\', \'{description}\', \'{date}\', \'{dev}\', \'{pub}\',\'{link}\')")).Show();
-            //}
-            //catch
-            //{
-            //    new Error("Что-то пошло не так").Show();
-            //}
+            try
+            {
+                new Success(connect.Command($"insert into games (name, description, release_date, dev_id, pub_id, link) values (\'{name}\', \'{description}\', \'{date}\', \'{dev}\', \'{pub}\',\'{link}\')")).Show();
+            }
+            catch
+            {
+                new Error("Что-то пошло не так").Show();
+            }
         }
     }
 

@@ -7,6 +7,8 @@ namespace WinFormsApp2
         MyConnect connect = new MyConnect();
         MySqlDataAdapter adapter1;
         DataTable dt1;
+        string game_id = "0";
+        string player_login = "";
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +45,7 @@ namespace WinFormsApp2
                     adapter1 = connect.GetAdapter("select * from publishers");
                     break;
                 case "Теги":
-                    adapter1 = connect.GetAdapter("select * from developers");
+                    adapter1 = connect.GetAdapter("select * from tags");
                     break;
                 case "Системные требования":
                     adapter1 = connect.GetAdapter("select * from requirements");
@@ -74,7 +76,10 @@ namespace WinFormsApp2
             {
                 if (comboBox1.SelectedItem == "Игры")
                 {
+                    button4.Text = "Добавить тег";
+                    button5.Text = "Удалить тег";
                     string id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                    game_id = id;
                     var dt = new DataTable();
                     var adapter = connect.GetAdapter("select " +
                         "games.name as Название, " +
@@ -111,7 +116,10 @@ namespace WinFormsApp2
                 }
                 if (comboBox1.SelectedItem == "Игроки")
                 {
+                    button4.Text = "Добавить игру";
+                    button5.Text = "Удалить игру";
                     string login = dataGridView1.Rows[e.RowIndex].Cells["Login"].Value.ToString();
+                    player_login = login;
                     var dt = new DataTable();
                     var adapter = connect.GetAdapter("select " +
                         "players.Username as \"Имя пользователя\", " +
@@ -155,16 +163,16 @@ namespace WinFormsApp2
                     new AddGame().Show();
                     break;
                 case "Разработчики":
-                    adapter1 = connect.GetAdapter("select * from developers");
+                    new AddDevPub("developers").Show();
                     break;
                 case "Издатели":
-                    adapter1 = connect.GetAdapter("select * from publishers");
+                    new AddDevPub("publishers").Show();
                     break;
                 case "Теги":
-                    adapter1 = connect.GetAdapter("select * from developers");
+                    new AddTags().Show();
                     break;
                 case "Системные требования":
-                    adapter1 = connect.GetAdapter("select * from requirements");
+                    new Error("Для добавления/удаления из этой таблицы воспользуйтесь таблицей players1").Show();
                     break;
             }
         }
@@ -180,18 +188,45 @@ namespace WinFormsApp2
                     new DeleteId("games").Show();
                     break;
                 case "Разработчики":
-                    adapter1 = connect.GetAdapter("select * from developers");
+                    new DeleteId("developers").Show();
                     break;
                 case "Издатели":
-                    adapter1 = connect.GetAdapter("select * from publishers");
+                    new DeleteId("publishers").Show();
                     break;
                 case "Теги":
-                    adapter1 = connect.GetAdapter("select * from developers");
+                    new DeleteId("tags").Show();
                     break;
                 case "Системные требования":
-                    adapter1 = connect.GetAdapter("select * from requirements");
+                    new Error("Для добавления/удаления из этой таблицы воспользуйтесь таблицей players1").Show();
                     break;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == "Игры")
+            {
+                
+                new AddTagToGame(game_id).Show();
+            }
+            else if (comboBox1.SelectedItem == "Игроки")
+            {
+                new AddGameToPlayer(player_login).Show();
+            }
+        }
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == "Игры")
+            {
+                new DeleteTagFromGame(game_id).Show();
+            }
+            else if (comboBox1.SelectedItem == "Игроки")
+            {
+                new DeleteGameFromPlayer(player_login).Show();
+            }
+            
         }
     }
 }

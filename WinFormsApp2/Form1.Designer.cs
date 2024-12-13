@@ -37,6 +37,8 @@
             richTextBox2 = new RichTextBox();
             button2 = new Button();
             button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -44,9 +46,10 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Игры", "Игроки", "Разработчики", "Издатели", "Теги", "Системные требования" });
-            comboBox1.Location = new Point(12, 12);
+            comboBox1.Location = new Point(22, 26);
+            comboBox1.Margin = new Padding(6);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(221, 40);
             comboBox1.TabIndex = 0;
             comboBox1.SelectionChangeCommitted += comboBox1_SelectionChangeCommitted;
             comboBox1.MouseClick += comboBox1_MouseClick;
@@ -54,17 +57,20 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 50);
+            dataGridView1.Location = new Point(22, 107);
+            dataGridView1.Margin = new Padding(6);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(348, 350);
+            dataGridView1.RowHeadersWidth = 82;
+            dataGridView1.Size = new Size(646, 747);
             dataGridView1.TabIndex = 1;
             dataGridView1.RowHeaderMouseClick += dataGridView1_RowHeaderMouseClick;
             // 
             // button1
             // 
-            button1.Location = new Point(285, 12);
+            button1.Location = new Point(529, 26);
+            button1.Margin = new Padding(6);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(139, 49);
             button1.TabIndex = 2;
             button1.Text = "Сохранить";
             button1.UseVisualStyleBackColor = true;
@@ -74,18 +80,20 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label1.Location = new Point(390, 14);
+            label1.Location = new Point(724, 30);
+            label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 25);
+            label1.Size = new Size(0, 51);
             label1.TabIndex = 3;
             // 
             // richTextBox1
             // 
             richTextBox1.BackColor = SystemColors.Window;
-            richTextBox1.Location = new Point(390, 50);
+            richTextBox1.Location = new Point(724, 107);
+            richTextBox1.Margin = new Padding(6);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
-            richTextBox1.Size = new Size(276, 237);
+            richTextBox1.Size = new Size(509, 501);
             richTextBox1.TabIndex = 4;
             richTextBox1.Text = "";
             // 
@@ -93,24 +101,27 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(390, 290);
+            label2.Location = new Point(724, 619);
+            label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
-            label2.Size = new Size(0, 21);
+            label2.Size = new Size(0, 45);
             label2.TabIndex = 5;
             // 
             // richTextBox2
             // 
-            richTextBox2.Location = new Point(390, 314);
+            richTextBox2.Location = new Point(724, 670);
+            richTextBox2.Margin = new Padding(6);
             richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(276, 115);
+            richTextBox2.Size = new Size(509, 184);
             richTextBox2.TabIndex = 6;
             richTextBox2.Text = "";
             // 
             // button2
             // 
-            button2.Location = new Point(12, 406);
+            button2.Location = new Point(22, 866);
+            button2.Margin = new Padding(6);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(139, 49);
             button2.TabIndex = 7;
             button2.Text = "Добавить";
             button2.UseVisualStyleBackColor = true;
@@ -118,19 +129,42 @@
             // 
             // button3
             // 
-            button3.Location = new Point(93, 406);
+            button3.Location = new Point(173, 866);
+            button3.Margin = new Padding(6);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(139, 49);
             button3.TabIndex = 8;
             button3.Text = "Удалить";
             button3.UseVisualStyleBackColor = true;
             button3.MouseClick += button3_MouseClick;
             // 
+            // button4
+            // 
+            button4.Location = new Point(724, 869);
+            button4.Name = "button4";
+            button4.Size = new Size(230, 46);
+            button4.TabIndex = 9;
+            button4.Text = "Добавить";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(1027, 869);
+            button5.Name = "button5";
+            button5.Size = new Size(206, 46);
+            button5.TabIndex = 10;
+            button5.Text = "Удалить";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1256, 960);
+            Controls.Add(button5);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(richTextBox2);
@@ -140,6 +174,7 @@
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(comboBox1);
+            Margin = new Padding(6);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -158,5 +193,7 @@
         private RichTextBox richTextBox2;
         private Button button2;
         private Button button3;
+        private Button button4;
+        private Button button5;
     }
 }
